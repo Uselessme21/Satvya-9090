@@ -1,0 +1,9 @@
+.text{
+justify-self:left;
+/* justify-self:right; */
+text-align: left;
+max-width: 600px;
+margin: 20% 0;
+padding: 20px ;
+vertical-align: baseline;
+}
