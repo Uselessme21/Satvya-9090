@@ -23,7 +23,7 @@ var swiper = new Swiper(".mySwiper", {
 });
 //   SECOND SLIDER
 var swiper0 = new Swiper(".mySwiper0", {
-spaceBetween: 30,
+    spaceBetween: 30,
     centeredSlides: true,
     autoplay: {
       delay: 2400,
