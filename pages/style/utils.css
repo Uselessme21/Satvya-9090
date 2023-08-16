@@ -156,6 +156,10 @@ section{
     justify-content: space-between;
     gap: 30px;
 }
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
 /* Navbar styles */
 header{
     width:100%;
@@ -331,9 +335,12 @@ form {
         gap: 20px;
         margin: auto;
     }
-
+    .grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
   
 }
+
 @media(max-width:768px){
     .footer-section >.container> .flex{
         display: flex;
@@ -343,5 +350,8 @@ form {
     .flex{
         display: flex;
         flex-direction: column;
+    }
+    .grid{
+        grid-template-columns: repeat(1, 1fr);
     }
 }
