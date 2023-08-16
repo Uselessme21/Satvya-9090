@@ -1,9 +1,8 @@
-.text{
-justify-self:left;
-/* justify-self:right; */
-text-align: left;
-max-width: 600px;
-margin: 20% 0;
-padding: 20px ;
-vertical-align: baseline;
+/* hero section */
+.text >h2, .text >p{
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  top: 360px;
 }
+

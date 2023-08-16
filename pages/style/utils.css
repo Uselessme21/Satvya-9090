@@ -1,48 +1,142 @@
+:root{
+    --color-primary-btn: #4717F6;
+    --color-primary-text:#ffffff; 
+    --color-secondary-text: #ffffffb9;
+    --color-primary-bg:#0E0B16;
+    --color-secondary-bg:#122423;
+}
+
+  body::-webkit-scrollbar {
+    width: 5px;
+  }
+  body {
+    scrollbar-width:5px;
+    scrollbar-color: var(--color-primary-btn) var(--color-primary-bg);
+  }
+  body::-webkit-scrollbar-track {
+    overflow-x: hidden;
+    background: var(--color-primary-bg);
+  }
+  body::-webkit-scrollbar-thumb {
+    background-color: var(--color-primary-btn) ;
+    border-radius: 90px;
+    border: 0.8px solid var(--color-primary-btn);
+  }
+  
+  
+  html {
+    background: lightgrey;
+    overflow: scroll;
+  }
+  /*  */
 body {
-   
-    background-color: #f0f0f0;
+    /* scrollbar-color; */
+  
+   scrollbar-width: 0;
+   /* cursor: text; */
+    background:var(--color-primary-bg) ;
     margin: 0;
     padding: 0;
-    font-size: 48px;
+    color: var(--color-primary-text);
   }
-  /* Reset default margin and padding */
+ 
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
+section{
+    /* Raspberry #8A307F, Blues #79A7D3 #6883BC */
+    /* background:conic-gradient(
+        #553c9a 0%, #553c9a 33%,
+         #ee4b2b 33%, #ee4b2b 66%, #00c2cb 66%, #00c2cb 99%
+      ); */
+    /* repeating-conic-gradient(#dacdff 0%, #b296ff 10%, #fcbdb1 10%, #fd856d 20%, #9dfbff 20%, #00c2cb 30%); ; */
+    background:var(--color-secondary-bg);
+}
+section:nth-child(even){
+    background:var(--color-primary-bg);
+}
 h2{
     margin-bottom: 0.6rem;
-    /* margin-left: 6px; */
-    text-transform: capitalize;
-    font-weight: 900;
+    text-transform:uppercase ;
+    font-weight: 700 !important;
     position: relative;
-    font-weight: bold;
     line-height: 1.15;
     letter-spacing: -0.03125rem;
-    color: #1d1a12;
+    color:transparent;
+    background: var(--color-primary-text);
+    background-clip: text;
+    -webkit-background-clip: text;
 }
-
+h4{
+    font-size: large !important;
+    text-transform:capitalize ;
+    color:transparent;
+    background: var(--color-secondary-text);
+    background-clip: text;
+    -webkit-background-clip: text;  
+}
 P{
     line-height: 1.2;
     margin-bottom: 2rem;
     font-size: 0.8rem;
     line-height: 1.29;
-    color: #282827;
+    color: var(--color-secondary-text);
+}
+button {
+    border-radius: 4px;
+    padding: 9px 20px;
+    border: none;
+    background-color:var(--color-primary-btn);
+    color: var(--color-primary-text);
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /* display: flex; */
+    gap: 9px;
+    margin: 0 9px;
 }
 a{
     text-decoration: none;
-    color: #000000;
+    color: var(--color-secondary-text) !important;
 }
+button i{
+    color: var(--color-primary-text);
+    cursor: pointer;
+    background: none;
+}
+input {
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    color: var(--color-primary-bg);
+}
+div.accordion>.accordion-item, div.accordion> button.accordion-button{
+    background:var(--color-primary-bg) !important;
+    border: none;
+}
+div.accordion> button{
+    background:var(--color-primary-bg);
+}
+div.top{
+    position: fixed;
+    width: 90px;
+    height: 90px;
+    background: #000;
+    z-index: 9;
+    bottom: 90px;
+    left: 90%;
+    border-radius: 50%;
+
+}
+/*  */
 section{
     padding: 50px 0;
     display: flex;
 }
-.container{
-    max-width: 1080px;
-}
+
 
 .flex{
     display: flex;
@@ -64,31 +158,18 @@ header{
 #chk1{
     display: none;
 }
-i{
-    color: #fff;
-    cursor: pointer;
-}
+
 header .logo{
     flex: 1;
-    color:#fff;
+    color:var(--color-primary-text);
      
     margin-left: 50px;
     text-transform: uppercase;
     font-size: 15px;
 }
 
-.search-box button{
-    cursor: pointer;
-    border:none;
-    padding: 9px 20px;
-    transform: scale(0.9);
-    background: rgb(251, 138, 0);
-    color: #fff;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
-.search-box button:hover{
-    box-shadow: none;
-}
+
+
 
 header ul {
     flex:2;
@@ -100,13 +181,12 @@ header ul li{
 }
 header ul li a{
     text-decoration: none;
-    color:#fff;
     font-weight: 600;
     text-transform: uppercase;
     padding: 10px 15px;
 }
 header ul li a:hover{
-    border-bottom: 2px solid cadetblue;
+    border-bottom: 2px solid var(--color-primary-text);
 }
 header .menu{
     font-size: 2.5em;
@@ -119,10 +199,10 @@ header .menu{
 .hero {
     width: 100%;
     /* height: 100vh; */
-    background: url(../../assets/img/background.jpg) no-repeat center center; /* Replace with your image URL */
+     
     background-size: cover;
     background-position: center;
-    color: rgb(0, 0, 0);
+    /* color: rgb(0, 0, 0); */
     text-align: center;
     /* padding: 100px 0; */
     display: flex;
@@ -133,7 +213,7 @@ header .menu{
 .hero-content {
     /* margin-right: 50px; */
     justify-self:right;
-    background: #ffffff3e;
+    background:transparent;
     max-width: 400px;
     margin: 60px;
     padding: 20px;
@@ -150,25 +230,9 @@ form {
     gap: 20px;
 }
 
-input {
-  
-    width: 100%;
-    background: #ffffffaf;
-    border: none;
-    border-radius: 4px;
-    outline: none;
-}
 
-button {
-    border-radius: 4px;
-    padding: 9px 20px;
-    border: none;
-    background-color: #333;
-    color: rgb(227, 38, 38);
-    cursor: pointer;
-    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 
-}
+
 /* footer */
 .footer-section{
     background: url(../../assets/img/construct.jpg) no-repeat center center #000000c5;
@@ -191,12 +255,12 @@ button {
     margin: auto;
 }
 .footer-section h3{
-    color: #b9b9b9;
+    color: var(--color-primary-text);
     font-weight: 900;
     cursor: pointer;
 }
 .footer-section h4>a{
-    color: #b9b9b9;
+    color: var(--color-secondary-text);
     font-weight: 900;
     cursor: pointer;
 }
@@ -205,12 +269,12 @@ button {
    
 }
 .footer-section p>a{
-    color: #b9b9b9;
+    color: var(--color-secondary-text);
     font-weight: 700;
     cursor: pointer;
 }
 .contact-us i{
-    color: #cccccc;
+   color: var(--color-secondary-text);
     font-size: 30px;
 
 }

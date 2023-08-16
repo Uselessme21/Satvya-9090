@@ -44,24 +44,84 @@
     </header>
      <!-- first section hero -->
      <section id="hero" class="hero" style="background: url(../assets/img/team.jpg) no-repeat center center; ">
+    <div class="container flex">
+      <div class="text">
+        <h2>About Us</h2>
+        <p>It all started with an idea, that changed the way we look at construction today. We started with the aim of making the construction simple, transparent and reliable .</p>
+        </div>
+        <div class="hero-content">
+            <h2>Welcome to Our Website</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit tellus eu cursus.</p>
+            <form action="#">
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <input type="tel" placeholder="mobile">
+                <input type="text" placeholder="Location">
+                <button type="submit">BOOK FREE CONSULTATION</button>
+            </form>
+        </div>
+    </div>   
+
         
-<div class="text">
-<h1>About Us</h1>
-<p>It all started with an idea, that changed the way we look at construction today. We started with the aim of making the construction simple, transparent and reliable .</p>
-</div>
-<div class="hero-content">
-    <h1>Welcome to Our Website</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit tellus eu cursus.</p>
-    <form action="#">
-        <input type="text" placeholder="Name">
-        <input type="email" placeholder="Email">
-        <input type="tel" placeholder="mobile">
-        <input type="text" placeholder="Location">
-        <button type="submit">BOOK FREE CONSULTATION</button>
-    </form>
-</div>
         
-        
+    </section>
+    <section class="our-focus">
+      <div class="container">
+        <div class="flex">
+          <!-- div 1 -->
+          <div class="our-vision">
+            <h2>
+              Most customer centric company making Construction absolutely simple, transparent and reliable for everyone
+            </h2>
+            <div class="swiper mySwiper">
+              <div class="swiper-pagination"> </div>
+              <div class="swiper-wrapper">
+                  
+                <div class="swiper-slide">
+                 
+                  <div class="card-body">
+                      <div class="card img"> <img src="../assets/img/Banner-4.jpg" alt=""></div>
+                      <div class="card text"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur mollitia amet illo? Dolor libero molestiae consequuntur non, nam eos, delectus vel itaque, optio incidunt labore natus. Cumque ducimus nam maiores!</div>
+                     
+                  </div>
+                  
+                </div>
+                <div class="swiper-slide"><div class="card-body">
+                  <div class="card img"> <img src="../assets/img/background.jpg" alt=""></div>
+                  <div class="card text"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur mollitia amet illo? Dolor libero molestiae consequuntur non, nam eos, delectus vel itaque, optio incidunt labore natus. Cumque ducimus nam maiores!</div>
+                 
+              </div></div>
+                <div class="swiper-slide"><div class="card-body">
+                  <div class="card img"> <img src="../assets/img/background.jpg" alt=""></div>
+                  <div class="card text"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur mollitia amet illo? Dolor libero molestiae consequuntur non, nam eos, delectus vel itaque, optio incidunt labore natus. Cumque ducimus nam maiores!</div>
+                 
+              </div></div>
+                <div class="swiper-slide">
+                  <div class="card-body">
+                  <div class="card img"> <img src="../assets/img/background.jpg" alt=""></div>
+                  <div class="card text"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur mollitia amet illo? Dolor libero molestiae consequuntur non, nam eos, delectus vel itaque, optio incidunt labore natus. Cumque ducimus nam maiores!</div>
+                 
+              </div></div>
+                <div class="swiper-slide"><div class="card-body">
+                  <div class="card img"> <img src="../assets/img/background.jpg" alt=""></div>
+                  <div class="card text"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur mollitia amet illo? Dolor libero molestiae consequuntur non, nam eos, delectus vel itaque, optio incidunt labore natus. Cumque ducimus nam maiores!</div>
+                 
+              </div></div>
+                <div class="swiper-slide"><div class="card-body">
+                  <div class="card img"> <img src="../assets/img/construct.jpg" alt=""></div>
+                  <div class="card text"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur mollitia amet illo? Dolor libero molestiae consequuntur non, nam eos, delectus vel itaque, optio incidunt labore natus. Cumque ducimus nam maiores!</div>
+                 
+              </div></div>
+              </div>
+             
+            </div>
+          </div>
+          <!-- div 2 -->
+          <div>
+
+          </div>
+        </div>
+      </div>
     </section>
      <!-- footer section-->
      <section class="footer-section">
@@ -118,5 +178,18 @@
 
       <!--  -->
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+      <script>
+        // 
+        var swiper = new Swiper(".mySwiper", {
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      renderBullet: function (index, className) {
+        return '<span class="' + className + '">' + (index + 1) + "</span>";
+      },
+    },
+  });
+      </script>
 </body>
 </html>
