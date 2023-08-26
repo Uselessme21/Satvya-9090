@@ -1,82 +1,88 @@
 const express = require('express')
 const UserModel = require('../model/user.model')
 const userrouter = express.Router()
-const bcrypt = require('bcrypt')
-const jwt = require('jsonwebtoken')
+const env= require('dotenv').config();
+const nodemailer = require('nodemailer');
    
 
-userrouter.post("/register", async (req, res) => {
+userrouter.post("/book", async(req, res) => {
+  
   try {
-    const { name, email, phone, location } = req.body;
-
+    
+  
+    const { name , email , phone, location } = req.body;
+    let status='Pending'
     const userExist = await UserModel.findOne({ email });
-
-    if (userExist) {
-      return res.status(401).send({ msg: "User Already Registered" });
+    console.log(userExist)
+    if (userExist && userExist.status=='Pending' ) {
+      return res.status(401).send({ msg:"User Already Registered"});
     }
+      const newUser = new UserModel({ name, email, phone , location,status});
+      const userData = await newUser.save();
+    
 
-    const hash = await bcrypt.hash(password, 8);
-
-    const newUser = new UserModel({ name, email, phone , role });
-
-    const userData = await newUser.save();
     if (userData) {
+      sendverificationmail(name, email, userData._id, phone, location)
       res.status(200).json({ msg: "Registration successful", userData });
     } else {
       res.status(401).json({ msg: "Registration failed" });
     }
   } catch (error) {
-    res.status(400).json({ msg: "Something went wrong" });
+     res.send({ msg: "Something went wrong",error:error.message });
   }
+
 });
 
 
 
-userrouter.post("/login", async (req, res) => {
-  try {
-    const { email, password } = req.body;
-    const isUserPresent = await UserModel.findOne({ email });
-    if (!isUserPresent) {
-      return res.status(401).send("user not found");
+
+
+let sendverificationmail = async (name, email,id,phone,location) => {
+    try {
+      let transporter = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
+          user: "thedreamerone0021@gmail.com",
+          pass: process.env.googlepassword,
+        },
+      });
+      let usermail = {
+        
+        to: email,
+        subject: "Consultation request sent Successfully",
+        html: `<p>Hi<h3> ${name} </h3><br> Your Consultation request is sent successfully,
+        Your provided phone number ${phone} and your provided location is ${location}.</p>
+        <h5>Your request Id is= ${id}</h5>
+        <h2> Thanks for reaching us, We will call you soon. </h2>
+        <button>check Out our Plans</button>`,
+      };
+      let Managermail = {
+        // from: "",
+        to: 'thedreamerone0021@gmail.com',
+        subject: "New Consultation request sent",
+        html: `<p> <h3>${name}</h3> <br> sent a new consultation request reach out to him at ${email} or call at ${phone}</p>
+        <h2>request Id is = ${id}</h2>
+        `,
+      };
+      transporter.sendMail(usermail, (error, info) => {
+        if (error) {
+          console.log(error);
+        } else {
+          console.log("Email sent: " + info.response);
+        }
+      });
+      transporter.sendMail(Managermail, (error, info) => {
+        if (error) {
+          console.log(error);
+        } else {
+          console.log("Email sent: " + info.response);
+        }
+      });
+    } catch (error) {
+      console.log(error);
     }
-    const isPass = await bcrypt.compare(password, isUserPresent.password);
-    if (!isPass) {
-      return res.status(401).send({ msg: "invalid credential" });
-    }
-    const token = await jwt.sign(
-      {
-        userId: isUserPresent._id,
-      },
-      process.env.SECRET,
-      { expiresIn: "1hr" }
-    );
-    res.send({
-      msg: "login success",
-      token,
-      username: isUserPresent.name,
-      userId: isUserPresent._id,
-      role: isUserPresent.role
-    });
-  } catch (error) {
-    res.status(401).send(error.message);
-  }
-});
+};
 
-
-
-
-
-userrouter.get("/logout", async (req, res) => {
-  try {
-    const token = req.headers?.authorization;
-    if (!token) return res.status(403);
-    let blackListedToken = new BlackListModel({ token });
-    await blackListedToken.save();
-    res.send({ msg: "logout succesfull" });
-  } catch (error) {
-    res.send(error.message);
-  }
-});
 
 
 
