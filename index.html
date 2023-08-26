@@ -9,13 +9,18 @@
 <script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
 <!-- font -->
 <script src="https://kit.fontawesome.com/e962f2728f.js" crossorigin="anonymous"></script>
-<!-- bootsrap -->
+<!-- swiper css -->
 <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
 />
-
+<!-- swiper js  -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<!--sweet alerts css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.7.27/sweetalert2.css" integrity="sha512-eRBMRR/qeSlGYAb6a7UVwNFgXHRXa62u20w4veTi9suM2AkgkJpjcU5J8UVcoRCw0MS096e3n716Qe9Bf14EyQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!--sweet alert js  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.7.27/sweetalert2.min.js" integrity="sha512-mJQ9oQHzLM2zXe1cwiHmnMddNrmjv1YlaKZe1rM4J7q8JTnNn9UgeJVBV9jyV/lVGdXymVx6odhgwNZjQD8AqA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 <!-- <style>
   .loader-container {
   display: flex;
@@ -1430,7 +1435,7 @@
 </body>
 </html>
 
-<!-- <script src="./js/utils.js"></script> -->
+<script src="./js/forms.js"></script>
 <script>
   const progressCircle = document.querySelector(".autoplay-progress svg");
   const progressContent = document.querySelector(".autoplay-progress span");
@@ -1535,74 +1540,74 @@
 
 
 
-$(document).ready(function () {
-    // Move the button element selection outside of the btn.addEventListener
+// $(document).ready(function () {
+//     // Move the button element selection outside of the btn.addEventListener
  
-  // const loader_container=$('.loader-container')
-  // const loader = $(".loader");
+//   // const loader_container=$('.loader-container')
+//   // const loader = $(".loader");
 
-  // Stop the spinning after 2 seconds
-  // setTimeout(function() {
-  //   loader_container.css('display','none')
-  //   // loader.css("animation", "none"); // Remove the animation
-  // }, 2000);
+//   // Stop the spinning after 2 seconds
+//   // setTimeout(function() {
+//   //   loader_container.css('display','none')
+//   //   // loader.css("animation", "none"); // Remove the animation
+//   // }, 2000);
 
-  const btn= $('input.mybutton[type="submit"]')
-    btn.click(async (e) => {
-        e.preventDefault();
+//   const btn= $('input.mybutton[type="submit"]')
+//     btn.click(async (e) => {
+//         e.preventDefault();
 
-        // Move the form field value selections inside the button click handler
-        const name = $("input.name").val();
-        const email = $("input.email").val();
-        const phone = $("input.phone").val();
-        const location = $('input.location').val();
+//         // Move the form field value selections inside the button click handler
+//         const name = $("input.name").val();
+//         const email = $("input.email").val();
+//         const phone = $("input.phone").val();
+//         const location = $('input.location').val();
 
-        try {
-            // Create the data object to send in the request
-            const requestData = {
-                name: name,
-                email: email,
-                phone: phone,
-                location: location
-            };
+//         try {
+//             // Create the data object to send in the request
+//             const requestData = {
+//                 name: name,
+//                 email: email,
+//                 phone: phone,
+//                 location: location
+//             };
 
-            // Send the Ajax request
-            const response = await $.ajax({
-                type: "POST",
-                url: 'http://localhost:2000/register/book',
-                data: JSON.stringify(requestData), // Send the data object
+//             // Send the Ajax request
+//             const response = await $.ajax({
+//                 type: "POST",
+//                 url: 'http://localhost:2000/register/book',
+//                 data: JSON.stringify(requestData), // Send the data object
 
-                contentType: "application/json",
-                beforeSend: function () {
-                    // You can add some code here for actions before sending the request
-                }
-            });
+//                 contentType: "application/json",
+//                 beforeSend: function () {
+//                     // You can add some code here for actions before sending the request
+//                 }
+//             });
 
-            // Handle the response
-            console.log(response);
+//             // Handle the response
+//             console.log(response);
 
-            if (response) {
-                console.log('hello');
-            }
-        } catch (err) {
-            console.error("Error:", err);
-        }
-  });
+//             if (response) {
+//                 console.log('hello');
+//             }
+//         } catch (err) {
+//             console.error("Error:", err);
+//         }
+//   });
 
-  const citySelect = $(".city");
-  const subcity=$("sub_city")
-  // Load previously selected city from local storage (if available)
-  const selectedCity = localStorage.getItem("selectedCity");
-  if (selectedCity) {
-    citySelect.val(selectedCity);
-  }
+//   const citySelect = $(".city");
+//   const subcity=$("sub_city")
+//   // Load previously selected city from local storage (if available)
+//   const selectedCity = localStorage.getItem("selectedCity");
+//   if (selectedCity) {
+//     citySelect.val(selectedCity);
+//   }
 
-  // Listen for changes in the dropdown selection
-  citySelect.change(function() {
-    const selectedValue = $(this).val();
-    localStorage.setItem("selectedCity", selectedValue);
-  });
-});
+//   // Listen for changes in the dropdown selection
+//   citySelect.change(function() {
+//     const selectedValue = $(this).val();
+//     localStorage.setItem("selectedCity", selectedValue);
+//   });
+// });
 
 </script>
 
