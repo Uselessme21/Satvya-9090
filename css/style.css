@@ -187,9 +187,9 @@ input[type=number] {
     vertical-align: middle;
     gap: 9px;
 }
-/* .flex>div{
-    width: 50%;
-} */
+.works.top_mg .flex >div{
+    width:50%
+}
 /* text align center */
 .float-rt {
     float: right;
@@ -248,10 +248,10 @@ img {
 }
 
 /*end reset*/
-/* @font-face {
+@font-face {
     font-family: 'ambleregular';
     src: url(../fonts/Amble-Regular-webfont.ttf) format('truetype');
-} */
+}
 
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -366,14 +366,11 @@ width:100% ;
     color: #969494;
     font-size: 0.85em;
     border-bottom: 1px solid #D6D6D6;
-    padding: 8px 0 8px 11px;
+    padding: 8px 8px 8px 11px;
 }
 
 
-.services_list li details:hover {
-    background: #555;
-    color: #FFF;
-}
+
 
 .sidebar_left_bottom {
     margin-top: 15px;
@@ -432,9 +429,7 @@ width:100% ;
     line-height: 1.2em;
 }
 /* featurs list or why satvya */
-/* .feature_list {
-    padding-top: 22px;
-} */
+
 .top_mg{
     padding: 22px 0 0 0;
 }
@@ -447,20 +442,17 @@ width:100% ;
 /* .feature_list */
  .cards .card{
     /* border: 1px solid #000000; */
+    text-align: center;
     border-radius: 8px;
     padding: 4px;
-    box-shadow: rgba(37, 37, 37, 0.414) 1px 1px 1px 1px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 .feature_list .cards .card img{
     height: 200px;
+    margin: auto;
 }
 /* banking partners */
-/* .banking_partners{
-    padding-top: 22px;
-} */
-/* .banking_partners >.banks{
-display: flex;
-} */
+
 .banking_partners >.banks img{
  max-width: 90px;
  margin: auto;
@@ -778,7 +770,7 @@ label {
 }
 
 .location li,
-ul.address li {
+ul.address li a {
     font-size: 0.85em;
     color: #6A6A6A;
     display: block;
@@ -985,7 +977,9 @@ ul.address li {
 }
 
 .contact-form input[type="text"],
-.contact-form textarea, .contact-form input[type="number"], .contact-form select {
+.contact-form textarea, 
+.contact-form input[type="number"],
+.contact-form select {
     padding: 8px;
     display: block;
     width: 98%;
@@ -1008,8 +1002,9 @@ ul.address li {
 }
 
 .contact-form input[type="text"]:focus,
-.contact-form textarea:focus {
-    border: 1px solid #CAC8C8;
+.contact-form textarea:focus,
+.contact-form input[type="number"]:focus {
+    border-bottom: 0.5px solid var(--color);
 }
 
 .submit_button {
