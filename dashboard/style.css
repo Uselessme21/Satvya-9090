@@ -141,8 +141,8 @@
         gap: 0.8rem;
     }
     aside .logo img{
-    width: 2rem;
-        height: 3rem;
+    width: 4rem;
+        height: 4rem;
     }
     aside .close{
         display:none;
@@ -307,7 +307,7 @@
     }
     main .insights .expenses svg circle{
         stroke-dasharray: 80;
-        stroke-dashoffset: 20;
+        stroke-dashoffset: 10;
     }
     
     main .insights .income svg circle{
