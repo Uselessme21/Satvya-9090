@@ -6,5 +6,5 @@ const env= require('dotenv').config();
 
 
 adminrouter.post('/signin', function(req , res){
-
+   users= UserModel.find();
 })

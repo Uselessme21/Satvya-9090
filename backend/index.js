@@ -11,7 +11,7 @@ app.get('/', (req, res)=>{
  
 
 })
-app.use('/register' ,userrouter);
+app.use('/register', userrouter);
 
 app.listen(2000, async()=>{
    await connection;
