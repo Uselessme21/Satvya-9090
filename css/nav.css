@@ -63,7 +63,7 @@ body{
 	padding: 0;
 }
 .navbar-brand img{
-	height: 90px;
+	height: 50px;
 	width: auto;
 	display: block;
   /* filter: brightness(10%); */

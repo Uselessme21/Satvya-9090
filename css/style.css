@@ -257,7 +257,7 @@ body {
 }
 
 .wrap {
-    width: 80%;
+    width: 95%;
     margin: 0 auto;
     transition: all .2s linear;
     -moz-transition: all .2s linear;
@@ -345,13 +345,13 @@ width:100% ;
 
 .content {
     float: left;
-    width: 54%;
+    width: 64%;
     margin: 0 2%;
 }
 
 .sidebar {
     float: left;
-    width: 21%;
+    width: 16%;
 }
 
 /************* Sidebar - Right ***********/
@@ -839,7 +839,7 @@ ul.address li a {
 /************ Services **************/
 .services_grid {
     float: left;
-    width: 77%;
+    width: 80%;
     margin: 0 2% 0 0;
 }
 
